@@ -1,4 +1,5 @@
 import express from "express";
+import movieRoutes from "./routes/movies.route.js"
 
 const app = express();
 const PORT = 6969;
@@ -10,25 +11,18 @@ app.get("/", (req,res) => {
 });
 
 //CRUD funcionality of movies
-// R - for reading
-app.get('/movies',() => {
 
-});
+// client -> middleware -> server
 
-// C - for creating movies
-app.post('/movies',() => {
+//create middleware using use function for using middleware
 
-});
+app.use("/movies", movieRoutes);
 
-// U - update movies
-app.put('/movies/:id',() => {
 
-});
 
-// D- for deleting movies
-app.delete('/movies/:id',() => {
-
-});
+/*should add Routes Structure but reduce the code conflict 
+create seperate route folder and add that folder
+*/
 
 app.listen(PORT, () => {
     console.log(`The server is running at http://localhost:${PORT}`);
