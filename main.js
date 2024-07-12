@@ -1,8 +1,12 @@
 import express from "express";
 import movieRoutes from "./routes/movies.route.js"
+import connectDB from "./db/db.js";
 
 const app = express();
 const PORT = 6969;
+
+//connect connectDB
+connectDB();
 
 app.get("/", (req,res) => {
     res.json({
