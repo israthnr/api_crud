@@ -6,6 +6,7 @@ const app = express();
 
 //Data understanding middleware
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 //connect connectDB
 connectDB();
